@@ -1,0 +1,243 @@
+<HTML>
+    <head>
+   
+   <title> Create the sentence!</title>
+    </head>
+    <style>
+   body {
+       display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;;
+            gap: 10px;
+   }
+
+.diceone {
+grid-row-start: 1; 
+grid-row-end: 2; 
+grid-column-start: 1; 
+grid-column-end: 2; 
+}
+
+.dicetwo {
+grid-row-start: 1; 
+grid-row-end: 2; 
+grid-column-start: 2; 
+grid-column-end: 3;     
+}
+
+.howmanytimesrolled {
+grid-row-start: 2; 
+grid-row-end: 3;
+grid-column-start: 1;
+grid-column-end: 3;    
+}
+
+.amountoftimesrolled {
+grid-row-start: 3;
+grid-row-end: 4;
+grid-column-start: 1;
+grid-column-end: 3;     
+}
+
+.inputone {
+grid-row-start: 5; 
+grid-row-end: 6;  
+grid-column-start: 1;
+grid-column-end: 2;   
+}
+
+.buttonone {
+grid-row-start: 4;
+grid-row-end: 5; 
+grid-column-start: 1;
+grid-column-end: 2;    
+}
+
+.mostfrequentlyrolled {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start:2;
+grid-column-end: 3;   
+}
+
+
+.buttontwo {
+grid-row-start: 5;
+grid-row-end: 6;
+grid-column-start: 2;
+grid-column-end: 3;
+
+
+}
+
+</style>
+<script>
+
+var one;
+var two;
+var memory;
+var mynumberarray  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var a = 0;
+
+
+function diceone() {
+document.getElementById("diceone").src = "1.png";
+document.getElementById("diceone").src = "2.png";
+document.getElementById("diceone").src = "3.png";
+document.getElementById("diceone").src = "4.png";
+document.getElementById("diceone").src = "5.png";
+document.getElementById("diceone").src = "6.png";
+
+
+one = (Math.floor(Math.random() * 6)+1);
+
+if (one == 1) 
+    {document.getElementById("diceone").src = "1.png";}
+
+    if (one == 2) 
+    {document.getElementById("diceone").src = "2.png";}
+
+    if (one == 3) 
+    {document.getElementById("diceone").src = "3.png";}
+
+    if (one == 4) 
+    {document.getElementById("diceone").src = "4.png";}
+
+    if (one == 5) 
+    {document.getElementById("diceone").src = "5.png";}
+
+    if (one == 6) 
+    {document.getElementById("diceone").src = "6.png";}
+
+
+ 
+
+two = (Math.floor(Math.random() * 6)+1);
+
+if (two == 1) 
+    {document.getElementById("dicetwo").src = "1.png";}
+
+    if (two == 2) 
+    {document.getElementById("dicetwo").src = "2.png";}
+
+    if (two == 3) 
+    {document.getElementById("dicetwo").src = "3.png";}
+
+    if (two == 4) 
+    {document.getElementById("dicetwo").src = "4.png";}
+
+    if (two == 5) 
+    {document.getElementById("dicetwo").src = "5.png";}
+
+    if (two == 6) 
+    {document.getElementById("dicetwo").src = "6.png";}
+
+document.getElementById("amountrolled").innerHTML = " You rolled a " + (one + two );
+
+
+if (one + two == 1) { mynumberarray[1]++;}
+ if (one + two == 2) { mynumberarray[2]++;}
+ if (one + two == 3) { mynumberarray[3]++;}
+ if (one + two == 4) { mynumberarray[4]++;}
+ if (one + two == 5) { mynumberarray[5]++;}
+ if (one + two == 6) { mynumberarray[6]++;}
+ if (one + two == 7) { mynumberarray[7]++;}
+ if (one + two == 8) { mynumberarray[8]++;}
+ if (one + two == 9) { mynumberarray[9]++;}
+ if (one + two == 10) { mynumberarray[10]++;}
+ if (one + two == 11) { mynumberarray[11]++;}
+ if (one + two == 12) { mynumberarray[12]++;}
+
+
+
+}
+
+
+function amountoftimesrolled() {
+    
+    var elementToGet = document.getElementById("amountoftimesrolled").value;
+  if(elementToGet>0 && elementToGet <= mynumberarray.length) {
+  document.getElementById("amountoftimesrolled").innerHTML = mynumberarray[elementToGet-1];
+            }   
+
+
+ 
+
+}
+
+function  mostfrequentlyrolled() {
+ 
+document.getElementById("rolledthemost").innerHTML = mynumberarray[inputone.value];
+
+
+}
+
+
+
+</script>
+
+
+<body>
+    
+<div class = "diceone">
+<img src = "1.png" id = "diceone">
+
+</div>
+
+
+
+<div class = "dicetwo">
+<img src = "1.png" id = "dicetwo">
+
+</div>
+
+
+<div class = "howmanytimesrolled"> 
+<p id = "amountrolled"> </p>    
+    
+    </div>
+
+
+<div class = "amountoftimesrolled"> </div>
+
+
+<div class = "inputone"> 
+<input id = "inputone">
+
+
+</div>
+
+<div class = "buttonone"> 
+<button onclick = "diceone()">  Press me to roll the dice! </button>
+
+</div>
+
+
+<div class = "mostfrequentlyrolled">  </div>
+<p id = "rolledthemost">   </p>
+
+
+
+
+
+<div class = "buttontwo"> 
+<button onclick = "mostfrequentlyrolled()"> Click here to find out how many times a number was rolled! </button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body> 
+   
